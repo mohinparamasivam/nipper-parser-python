@@ -11,3 +11,8 @@ Steps:
 2. Find the <sect1> tag in source code using "search feature on browser"
 3. Specify the number shown on the top right corner for both start location and end
 4. Set output filename with ".xls" extension
+
+
+<h3> Dependencies</h3>
+
+pip3 install -r requirements.txt
