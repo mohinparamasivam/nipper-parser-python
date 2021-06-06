@@ -63,7 +63,7 @@ while(sect_start!=sect_end):
 		section_part_row+=1
 		content = bs_content.findAll('sect1')[sect_start].text
 		print("[+] Writing location : Row --> %s Column--> %s " %(section_part_row,section_part_column))
-		sheet1.write(section_part_row,section_part_column,content)
+		sheet1.write_string(section_part_row,section_part_column,content)
 		section_part_column+=1
 		
 		
@@ -71,7 +71,7 @@ while(sect_start!=sect_end):
 	
 		content = bs_content.findAll('sect1')[sect_start].text
 		print("[+] Writing location : Row --> %s Column--> %s " %(section_part_row,section_part_column))
-		sheet1.write(section_part_row, section_part_column,content)
+		sheet1.write_string(section_part_row, section_part_column,content)
 		section_part_column+=1
 		
 		
