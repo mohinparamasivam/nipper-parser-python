@@ -1,6 +1,4 @@
 from bs4 import BeautifulSoup as bs
-import xlwt 
-from xlwt import Workbook 
 import xlsxwriter
 
 
@@ -54,19 +52,18 @@ section_part_row = 0
 wb = xlsxwriter.Workbook(output_file_excel+".xls")
 sheet1 = wb.add_worksheet()
 
-
 # While there is more data in the xml file continue looping
 while(sect_start!=sect_end):
 			
 	
 	#If the column reaches 3 then reset column and row coordinates
 	
-	if(section_part_column==4):
+	if(section_part_column==5):
 		section_part_column=0
 		section_part_row+=1
 		content = bs_content.findAll('sect1')[sect_start].text
 		print("[+] Writing location : Row --> %s Column--> %s " %(section_part_row,section_part_column))
-		sheet1.write_string(section_part_row,section_part_column,content)
+		sheet1.write(section_part_row,section_part_column,content)
 		section_part_column+=1
 		
 		
@@ -74,7 +71,7 @@ while(sect_start!=sect_end):
 	
 		content = bs_content.findAll('sect1')[sect_start].text
 		print("[+] Writing location : Row --> %s Column--> %s " %(section_part_row,section_part_column))
-		sheet1.write_string(section_part_row, section_part_column,content)
+		sheet1.write(section_part_row, section_part_column,content)
 		section_part_column+=1
 		
 		
@@ -82,8 +79,9 @@ while(sect_start!=sect_end):
 	#Counter for sect increment
 	sect_start+=1
 	
+wb.close()	
 print("\r\n")
-print("[+] Successfully Written to --> %s" %(output_file_excel))	
+print("[+] Successfully Written to --> %s" %(output_file_excel+".xls"))	
 print("\r\n")	
 		
 		
