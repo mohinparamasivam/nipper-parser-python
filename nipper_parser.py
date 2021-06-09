@@ -58,7 +58,7 @@ while(sect_start!=sect_end):
 	
 	#If the column reaches 3 then reset column and row coordinates
 	
-	if(section_part_column==5):
+	if(section_part_column==4):
 		section_part_column=0
 		section_part_row+=1
 		content = bs_content.findAll('sect1')[sect_start].text
